@@ -1,0 +1,136 @@
+@media only screen and (max-width: 1114px) {
+  /* Styles for desktop devices */
+  .container {
+    flex-direction: row;
+  }
+
+  .im {
+    width: 30%;
+  }
+  .im .redes {
+    width: 50%;
+  }
+  .redes img {
+    width: 2.4vw;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for tablet devices */
+  .container {
+    flex-direction: row;
+    padding-inline: 20px;
+  }
+
+  .im {
+    width: 50%;
+  }
+
+  .redes img {
+    width: 3.2vw;
+  }
+
+  /* ... other tablet-specific styles */
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for mobile devices */
+  .container {
+    flex-direction: column;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .im,
+  .introduccion,
+  .proyects,
+  .skills,
+  .skills .techText,
+  .skills .skillcards {
+    width: 90%;
+    max-width: 100%;
+    padding-inline: 5vw;
+  }
+
+  .im .redes {
+    width: 33%;
+  }
+
+  .redes img {
+    width: 3.6vw;
+  }
+
+  .introtext {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+  }
+  h5 {
+    font-size: 23px;
+    font-weight: 400;
+    color: #989b9c;
+  }
+
+  .introtext hr {
+    width: 2vw;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  .introduccion h3 {
+    font-size: 18px;
+  }
+
+  .introduccion i {
+    font-size: 13px;
+    float: right;
+    right: 0;
+    font-weight: 300;
+  }
+
+  .pContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5vw;
+    text-align: left;
+  }
+
+  .btn {
+    min-width: 175px;
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills .skillcards {
+    gap: 30px;
+  }
+  .skillcards img {
+    width: 10vw;
+  }
+  @keyframes ripple {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1),
+        0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1),
+        0 0 0 50px rgba(255, 255, 255, 0);
+    }
+  }
+}

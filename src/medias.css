@@ -16,7 +16,6 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Styles for tablet devices */
   .container {
     flex-direction: row;
     padding-inline: 20px;
@@ -34,6 +33,50 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .mobileNav {
+    height: 30px;
+    width: 30px;
+  }
+  .hamburguer-button {
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hamburguer-button .menuSpan {
+    height: 1px;
+    width: 100%;
+    background-color: white;
+  }
+  .hamburger-menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    padding-top: 10vh;
+    background-color: #020408f7;
+    left: 0;
+    top: 0;
+  }
+
+  .hamburger-menu ul {
+    list-style: none;
+  }
+  .hamburger-menu ul li {
+    margin-bottom: 10vh;
+  }
+
+  .hamburger-menu ul li a {
+    font-size: 35px;
+    color: #f2f3f4;
+  }
   /* Styles for mobile devices */
   .container {
     flex-direction: column;
@@ -41,6 +84,7 @@
   .hero {
     flex-direction: column;
     align-items: center;
+    margin-top: 5vh;
   }
 
   .im,
@@ -112,6 +156,7 @@
   .skills {
     display: flex;
     flex-direction: column;
+    margin-top: 7vh;
   }
 
   .skills .skillcards {
@@ -120,6 +165,23 @@
   .skillcards img {
     width: 10vw;
   }
+
+  .proyectCard {
+    width: 500px;
+    max-height: 300px;
+  }
+
+  .proyectCardContent {
+    padding: 0px 10px;
+  }
+
+  .proyectCardContent h3 {
+    font-size: 16px;
+  }
+  .proyectCardContent p {
+    font-size: 12px;
+  }
+
   @keyframes ripple {
     0% {
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1),

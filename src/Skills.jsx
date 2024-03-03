@@ -1,12 +1,27 @@
 import React from "react";
 import { skills } from "./js/skills";
+import { motion } from "framer-motion";
 
 const skillImages = skills;
 
 export const Skills = () => {
+  const inViewConfig = {
+    once: true,
+    amount: 0.02,
+    getVisibility: (el) => {
+      const rect = el.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      return rect.top < viewHeight * 0.2;
+    },
+  };
   return (
-    <div className="skills">
-      <div className="techText">
+    <motion.div
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+      viewport={inViewConfig}
+      className="skills"
+    >
+      <div className="techText" id="habilidades">
         <section className="introtext">
           <h5>Habilidades</h5>
           <hr />
@@ -22,6 +37,6 @@ export const Skills = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };

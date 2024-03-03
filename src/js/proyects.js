@@ -32,12 +32,6 @@ export const proyectsImages = [
         titulo: "Registro de asistencia y calificaciones:",
         description: " Simplifica el seguimiento del progreso de los alumnos.",
       },
-      ,
-      {
-        titulo: "Cálculo automático de calificaciones:",
-        description: "Ahorra tiempo a los profesores en tareas tediosas.",
-      },
-      ,
       {
         titulo:
           "Visualización de la calificación individual y del promedio del grupo:",
@@ -51,10 +45,6 @@ export const proyectsImages = [
         titulo:
           "Registro de usuarios con correo electrónico o cuentas de Google:",
         description: "Facilita el acceso a la aplicación.",
-      },
-      {
-        titulo: "Inicio de sesión seguro:",
-        description: " Protege la información confidencial.",
       },
     ],
     tecnologias: [
@@ -119,11 +109,6 @@ export const proyectsImages = [
         titulo: "Animaciones atractivas:",
         description:
           "Disfruta de una interfaz intuitiva con animaciones que te guiarán en tu viaje.",
-      },
-      {
-        titulo: "Diseño adaptable:",
-        description:
-          "Accede a la aplicación desde cualquier dispositivo con una experiencia optimizada.",
       },
     ],
     tecnologias: [

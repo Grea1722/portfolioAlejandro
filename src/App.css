@@ -12,7 +12,7 @@
   --color-firebase: #fcc44c;
   --color-redux: #6c4cfc;
   --color-sql: #e03f4f;
-  -color-ant1: #fa333e;
+  --color-ant1: #fa333e;
   --color-ant2: #00b8d9;
   --color-whats: #29a71a;
 }
@@ -22,7 +22,9 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .container {
   width: 100%;
   height: 100%;
@@ -62,7 +64,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   color: #d6e8ee;
-  margin-top: 7vh;
+  margin-top: 12vh;
+  height: auto;
 }
 
 .im {
@@ -112,6 +115,17 @@ body {
   bottom: 125%;
   left: 50%;
   transform: translateX(-50%);
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -283,16 +297,27 @@ h2 {
 }
 
 .navbar {
+  width: 100%;
+  z-index: 9999;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 5vw;
+  align-items: center;
+  padding: 10px 5vw;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  animation: enhance-header linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 200px;
 }
 
 .navbarimg img {
   width: 4vw;
 }
-.navbarlinks a {
+
+a {
   color: #97cadb;
   text-decoration: none;
   margin: 0 20px;
@@ -303,17 +328,17 @@ h2 {
   transition-property: color;
   position: relative;
 }
-.navbarlinks a:focus,
-.navbarlinks a:hover {
+a:focus,
+a:hover {
   color: #fff;
 }
 
-.navbarlinks a:focus:after,
-.navbarlinks a:hover:after {
+a:focus:after,
+a:hover:after {
   width: 100%;
   left: 0%;
 }
-.navbarlinks a:after {
+a:after {
   content: "";
   pointer-events: none;
   bottom: -2px;
@@ -383,7 +408,7 @@ h2 {
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   color: #d6e8ee;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .proyectCard:hover .proyectCardContent {
@@ -421,18 +446,20 @@ h2 {
 .skills {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   color: #d6e8ee;
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 .skills .techText {
   min-width: 30%;
-  max-width: 40%;
+  max-width: 30%;
   padding: 20px 7vw;
 }
 
 .skills .skillcards {
-  min-width: 40%;
+  min-width: 30%;
+  max-width: 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -441,7 +468,7 @@ h2 {
 }
 
 .skillcards img {
-  width: 7vw;
+  width: 5vw;
 }
 
 .descargarCv {
@@ -553,4 +580,30 @@ h2 {
     clip-path: var(--slice-1);
     transform: translate(0);
   }
+}
+
+@keyframes enhance-header {
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 3vh;
+  background-color: #00296f;
+  color: #97cadb;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer h6 {
+  font-size: 15px;
+  font-weight: 200;
+  font-style: italic;
 }

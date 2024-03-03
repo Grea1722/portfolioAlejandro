@@ -5,6 +5,7 @@ import { Navbar } from "./Navbar";
 import { Hero } from "./Hero";
 import { Skills } from "./Skills";
 import { Trabajos } from "./Trabajos";
+import { Footer } from "./Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <Skills />
         <Trabajos />
+        <Footer />
       </div>
     </div>
   );

@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import { instagram, gmail, linkedin, whats } from "./assets/index.js";
 import { isMobile } from "react-device-detect";
 import cv from "./assets/cv.pdf";
+import { motion } from "framer-motion";
 
 const webWhats = "https://web.whatsapp.com/";
 const mobileWhats =
   "https://api.whatsapp.com/send?phone=+16196792750&text=Hola%20me%20gustaria%20contactar%20contigo.";
 
+const spring = {
+  type: "spring",
+  damping: 10,
+  stiffness: 100,
+};
+
 export const Hero = () => {
   const [dispositivo, setDispositivo] = useState();
+  const name = "Alejandro Solis".split("");
 
   const esCel = () => {
     if (isMobile) {
@@ -30,9 +38,28 @@ export const Hero = () => {
     window.lo;
   };
   return (
-    <div className="hero">
-      <div className="im">
-        <h1>Alejandro Solis.</h1>
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+      viewport={{ once: true }}
+      className="hero"
+    >
+      <div className="im" id="inicio">
+        <motion.h1>
+          {name.map((el, i) => (
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: i / 10,
+              }}
+              key={i}
+            >
+              {el}
+            </motion.span>
+          ))}
+        </motion.h1>
         <hr />
         <div className="redes">
           <a
@@ -119,6 +146,6 @@ export const Hero = () => {
           Contactar <i className="animation" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
